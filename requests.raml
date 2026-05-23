@@ -6,7 +6,7 @@ resourceTypes:
   requests:
     get?:
       description: Get <<typeName>>
-      is: [ body.success: { typeName: <<typeName>> }, body.errors]
+      is: [ body.success: { typeName: <<typeName>> }, body.errors, body.notFound: { typeName: <<typeName>> }]
     post?:
       description: Create <<typeName>>
       is: [ body.created: { typeName: <<typeName>> }, body.errors, body.auth, body.data: { typeName: <<typeName>> }]
@@ -15,6 +15,6 @@ resourceTypes:
       is: [ body.success: { typeName: <<typeName>> }, body.errors, body.auth]
     put?:
       description: Replace <<typeName>>
-      is: [ body.success: { typeName: <<typeName>> }, body.errors, body.auth]
+      is: [ body.success: { typeName: <<typeName>> }, body.errors, body.auth, body.notFound: { typeName: <<typeName>> }]
 
     
