@@ -1,0 +1,26 @@
+#%RAML 1.0 Trait
+responses:
+  401:
+    description: Credenciais inválidas, acesso negado
+    body:
+      application/json:
+        type: 
+          properties:
+            message:
+              type: string
+              example: "Unauthorized"
+            details:
+              type: string
+              example: "Invalid credentials provided"
+  403:
+    description: Acesso proibido, o usuário não tem permissão para acessar este recurso
+    body:
+      application/json:
+        type: 
+          properties:
+            message:
+              type: string
+              example: "Forbidden"
+            details:
+              type: string
+              example: "You do not have permission to access this resource"

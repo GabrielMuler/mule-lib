@@ -1,0 +1,26 @@
+#%RAML 1.0 Trait
+responses:
+  400:
+    description: Requisição inválida, verifique os dados enviados
+    body:
+      application/json:
+        type: 
+          properties:
+            message:
+              type: string
+              example: "Invalid request data"
+            details:
+              type: string
+              example: "Required key [username] not found"
+  500:
+    description: Erro interno do servidor, tente novamente mais tarde
+    body:
+      application/json:
+        type: 
+          properties:
+            message:
+              type: string
+              example: "Internal server error"
+            details:
+              type: string
+              example: "An unexpected error occurred"

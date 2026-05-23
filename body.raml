@@ -1,0 +1,11 @@
+#%RAML 1.0 Library
+usage: This library defines some basic traits
+traits:
+  success: !include traits/success.raml
+  created: !include traits/created.raml
+  errors: !include traits/errors.raml
+  auth: !include traits/auth.raml
+  data:
+    body:
+      application/json:
+        type: request.<<methodName>>.<<typeName>>

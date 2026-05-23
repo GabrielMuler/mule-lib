@@ -1,0 +1,20 @@
+#%RAML 1.0 Library
+usage: This library defines the resource types for the API
+uses:
+  body: body.raml
+resourceTypes:
+  requests:
+    get?:
+      description: Get <<typeName>>
+      is: [ body.success: { typeName: <<typeName>> }, body.errors]
+    post?:
+      description: Create <<typeName>>
+      is: [ body.created: { typeName: <<typeName>> }, body.errors, body.auth, body.data: { typeName: <<typeName>> }]
+    patch?:
+      description: Update <<typeName>>
+      is: [ body.success: { typeName: <<typeName>> }, body.errors, body.auth]
+    put?:
+      description: Replace <<typeName>>
+      is: [ body.success: { typeName: <<typeName>> }, body.errors, body.auth]
+
+    
