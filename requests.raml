@@ -12,9 +12,9 @@ resourceTypes:
       is: [ body.created: { typeName: <<typeName>> }, body.errors, body.auth, body.data: { typeName: <<typeName>> }]
     patch?:
       description: Update <<typeName>>
-      is: [ body.success: { typeName: <<typeName>> }, body.errors, body.auth]
+      is: [ body.success: { typeName: <<typeName>> }, body.errors, body.auth, body.data: { typeName: <<typeName>> }]
     put?:
       description: Replace <<typeName>>
-      is: [ body.success: { typeName: <<typeName>> }, body.errors, body.auth, body.notFound: { typeName: <<typeName>> }]
+      is: [ body.success: { typeName: <<typeName>> }, body.errors, body.auth, body.notFound: { typeName: <<typeName>> }, body.data: { typeName: <<typeName>> }]
 
     
